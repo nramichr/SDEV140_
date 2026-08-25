@@ -15,6 +15,6 @@ sugar_amount_needed = sugar_per_cookie * cookie_amount
 butter_amount_needed = butter_per_cookie * cookie_amount
 flour_amount_needed = flour_per_cookie * cookie_amount
 print("According to the maths this is how much you'll need to make", cookie_amount, "cookies:")
-print("Sugar needed:", sugar_amount_needed)
-print("Butter needed:", butter_amount_needed)
-print("Flour needed:", flour_amount_needed)
+print("Cups of sugar needed:", sugar_amount_needed)
+print("Cups of butter needed:", butter_amount_needed)
+print("Cups of flour needed:", flour_amount_needed)
