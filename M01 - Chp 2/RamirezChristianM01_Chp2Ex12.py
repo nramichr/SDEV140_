@@ -16,10 +16,13 @@ additional_stockbroker_fee = 0.03
 
 stock_amount_sold = total_shares_sold*share_price
 additional_stockbroker_commission = additional_stockbroker_fee*total_shares_sold
+stocky_stocky = additional_stockbroker_commission-stockbroker_fee_amount
+
 profit = stock_amount_sold-share_cost
 
 print("This is the amount for the sold stock:$",f"{stock_amount_sold:.2f}")
 print("This is the total commissions fee for stockbroker:$",f"{additional_stockbroker_commission:.2f}")
-print("This is the profit made from the transaction:$",f"{profit:.2f}")
+print("This is the profit made from the transaction:$",f"{profit+stocky_stocky:.2f}")
+
 
 
