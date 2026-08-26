@@ -16,7 +16,7 @@ if decision.lower() == 'y':
 else:
     print("Please restart the program and enter the correct amount of cookies.")
 if decision.lower() == 'n':
- exit()
+ exit()  # noqa: PLR1722
 sugar_per_cookie = 1.5
 butter_per_cookie = 1.0
 flour_per_cookie = 2.75
