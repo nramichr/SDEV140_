@@ -36,3 +36,5 @@ profit = stock_amount_sold-share_cost
 print("This is the amount for the sold stock:$",f"{stock_amount_sold:,.2f}")
 print("This is the total commissions fee for stockbroker:$",f"{additional_stockbroker_commission:,.2f}")
 print("This is the profit made from the transaction:$",f"{profit+expenses:,.2f}")
+
+print("Christian Ramirez-Flores")
