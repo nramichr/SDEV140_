@@ -12,11 +12,11 @@ cookie_amount = int(input())
 print("You want to make", cookie_amount, "cookies.")
 decision = input("Is that correct? (y/n): ")
 if decision.lower() == 'y':
-    print("Great! Let's get started.")
+    print("Awesome Sauce!")
 else:
     print("Please restart the program and enter the correct amount of cookies.")
 if decision.lower() == 'n':
- exit()  # noqa: PLR1722
+ exit()
 sugar_per_cookie = 1.5
 butter_per_cookie = 1.0
 flour_per_cookie = 2.75
@@ -26,6 +26,6 @@ butter_amount_needed = butter_per_cookie * cookie_amount
 flour_amount_needed = flour_per_cookie * cookie_amount
 
 print("According to the maths this is how much you'll need to make", cookie_amount, "cookies:")
-print("Cups of sugar needed:", sugar_amount_needed)
-print("Cups of butter needed:", butter_amount_needed)
-print("Cups of flour needed:", flour_amount_needed)
+print("Cups of sugar needed:", int(sugar_amount_needed))
+print("Cups of butter needed:", int(butter_amount_needed))
+print("Cups of flour needed:", int(flour_amount_needed))
