@@ -21,4 +21,10 @@ else:
 print("Christian Ramirez-Flores :D")
 
 #I was trying to make a clean output for integers and floats but started spending way too much time on it.
- 
+#Enter the first number: 1298367   
+#Enter the second number: 1298367   
+#The product of your two numbers is: 1,685,756,866,689.0
+
+#Enter the first number: 1298367.43
+#Enter the second number: 1298367.43
+#The product of your two numbers is: 1,685,757,983,284.8047
