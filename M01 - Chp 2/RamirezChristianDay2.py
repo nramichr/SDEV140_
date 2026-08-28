@@ -10,12 +10,15 @@ When complete, submit your program source code.
 FIRST_NUMBER=float(input("Enter the first number: "))
 SECOND_NUMBER=float(input("Enter the second number: "))
 
-OUTPUT = FIRST_NUMBER * SECOND_NUMBER
+OUTPUT = float(FIRST_NUMBER * SECOND_NUMBER)
 
-if len(str(OUTPUT)) <= len(f"{OUTPUT:,.2f}"):
+if len(str(OUTPUT)) is int: 
     print("The product of your two numbers is:", f"{OUTPUT:,.0f}")
+else:
+    print("The product of your two numbers is:", f"{OUTPUT:,}")
 
-if len(str(OUTPUT)) >= len(f"{OUTPUT:,.2f}"):
-    print("Your answer is:", f"{OUTPUT:,}")
 
-print("Christian Ramirez-Flores :)")
+print("Christian Ramirez-Flores :D")
+
+#I was trying to make a clean output for integers and floats but started spending way too much time on it.
+ 
