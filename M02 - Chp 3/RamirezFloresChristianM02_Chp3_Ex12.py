@@ -15,6 +15,7 @@ The program should then display the amount of the discount (if any) and the tota
 
 def main():
     packages_purchased: int = int(input("Enter number of packages purchased: "))
+    PACKAGE_PRICE: int = 99
 
     if packages_purchased >= 100:
         discount = 0.4
@@ -27,7 +28,7 @@ def main():
     else:
         discount = 0
 
-    total_cost = packages_purchased * 99
+    total_cost = packages_purchased * PACKAGE_PRICE
     discount_amount = total_cost * discount
     final_cost = total_cost - discount_amount
 
