@@ -7,11 +7,12 @@ Write a program that inputs a score from zero to 100.  Use If statements to calc
 60-69 D
 <60 F
 """
+# Defines module
 def main():
 
     print('Enter a score from 0 to 100 to calculate the grade on a ten point scale.')
 
-    score: float = float(input('Please enter your score (0-100): '))
+    score:float = float(input('Please enter your score (0-100): '))
 
     if score > 100:
         print('That grade is not possible.')
@@ -23,9 +24,10 @@ def main():
         print('Your grade is: C')
     elif score >= 60:
         print('Your grade is: D')
-    else:
+    elif score >= 0:
         print('Your grade is: F')
-    
+    else:
+        print('That grade is not possible, your score is too low.')
 main()
 
 print('Christian Ramirez-Flores')
