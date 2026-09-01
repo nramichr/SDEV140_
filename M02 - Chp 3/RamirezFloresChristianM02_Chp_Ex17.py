@@ -40,9 +40,6 @@ def main():
     elif vegetarians == 'y' and vegans == 'y' and gluten_free == 'y':
         print("Corner Café")
         print("The Chef's Kitchen")
-    elif vegetarians == 'y' and vegans == 'y' and gluten_free == 'n':
-        print("Corner Café")
-        print("The Chef's Kitchen")
     elif vegetarians == 'y' and vegans == 'n' and gluten_free == 'y':
         print("Main Street Pizza Company")
         print("Corner Café")
