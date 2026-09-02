@@ -10,6 +10,26 @@ Here is another example of the program’s output:200
 
 def main():
     print("Lets try to fix you Wi-Fi connection!")
-    print(" Reboot the computer and try to connect.")
+    print("Reboot the computer and try to connect.")
     answer = input("Did that fix the problem? (yes or no): ")
     if answer.lower() == "yes":
+        print("Great! Your Wi-Fi connection is fixed.")
+    else:
+        print("Reboot the router and try to connect.")
+        answer = input("Did that fix the problem? (yes or no): ")
+        if answer.lower() == "yes":
+            print("Great! Your Wi-Fi connection is fixed.")
+        else:
+            print("Make sure the cables between the router & modem are plugged in firmly.")
+            answer = input("Did that fix the problem? (yes or no): ")
+            if answer.lower() == "yes":
+                print("Great! Your Wi-Fi connection is fixed.")
+            else:
+                print("Move the router to a new location and try to connect.")
+                answer = input("Did that fix the problem? (yes or no): ")
+                if answer.lower() == "yes":
+                    print("Great! Your Wi-Fi connection is fixed.")
+                else:
+                    print("Get a new router.")
+
+main()

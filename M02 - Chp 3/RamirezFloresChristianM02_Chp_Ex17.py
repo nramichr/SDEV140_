@@ -22,29 +22,31 @@ def main():
     if vegetarians == 'n' and vegans == 'n' and gluten_free == 'n':
         print("Joe's Gourmet Burgers")
         print("Main Street Pizza Company")
-        print("Corner Café")
+        print("Corner Cafe")
         print("Mama's Fine Italian")
         print("The Chef's Kitchen")
     elif vegetarians == 'y' and vegans == 'n' and gluten_free == 'n':
         print("Main Street Pizza Company")
-        print("Corner Café")
+        print("Corner Cafe")
         print("Mama's Fine Italian")
         print("The Chef's Kitchen")
     elif vegetarians == 'n' and vegans == 'y' and gluten_free == 'n':
-        print("Corner Café")
+        print("Corner Cafe")
         print("The Chef's Kitchen")
     elif vegetarians == 'n' and vegans == 'n' and gluten_free == 'y':
         print("Main Street Pizza Company")
-        print("Corner Café")
+        print("Corner Cafe")
         print("The Chef's Kitchen")
     elif vegetarians == 'y' and vegans == 'y' and gluten_free == 'y':
-        print("Corner Café")
+        print("Corner Cafe")
         print("The Chef's Kitchen")
     elif vegetarians == 'y' and vegans == 'n' and gluten_free == 'y':
         print("Main Street Pizza Company")
-        print("Corner Café")
+        print("Corner Cafe")
         print("The Chef's Kitchen")
     elif vegetarians == 'n' and vegans == 'y' and gluten_free == 'y':
-        print("Corner Café")
+        print("Corner Cafe")
         print("The Chef's Kitchen")
 main()
+
+print('Christian Ramirez-Flores')
