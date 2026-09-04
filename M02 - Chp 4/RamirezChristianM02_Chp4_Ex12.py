@@ -25,33 +25,31 @@ The program should display the following table of data:
 
 """
 
-organism_input: str = input('Starting number of organisms (e.g. 10): ')
-while organism_input.isdigit() == False and int(organism_input) < 1:
-    print ('Please enter a positive number!')
+organism_input: str = input('Starting number of organisms: ')
+while not organism_input.isdigit() or int(organism_input) < 1:
+    print('Please enter a positive number!')
     organism_input = input('Starting number of organisms: ')
 
 start_num_organisms: int = int(organism_input)
 
-avg_daily_increase_input: str = input("Enter the average daily increase as an integer representing a percentage (e.g. 30 for 30%): ")
+increase_input: str = input('Average daily increase (as a percentage): ')
+while not increase_input.isdigit() or int(increase_input) < 0:
+    print('Please enter zero or a positive number!')
+    increase_input = input('Average daily increase (as a percentage): ')
 
-try:
-    while avg_daily_increase_input.isdigit() == False and int(avg_daily_increase_input) < 1:
-        print ('Please enter an integer greater than zero!')
-    avg_daily_increase_input = input("Enter the average daily increase as an integer representing a percentage (e.g. 30 for 30%): ")
-except ValueError:
-    print("You did not enter a valid number.")
-    exit(-1)
+daily_increase: float = 1 + int(increase_input) / 100
 
-#adding 1 so I don't have to do more math later
-avg_daily_increase: float = 1 + int(avg_daily_increase_input)/100
+days_input: str = input('Number of days to multiply: ')
+while not days_input.isdigit() or int(days_input) < 1:
+    print('Please enter a positive number!')
+    days_input = input('Number of days to multiply: ')
 
-num_days_input: str = input("Enter the number of days the organisms will be left to multiply: ")
-while num_days_input.isdigit() == False and int(num_days_input) < 1:
-    print ('Please enter an integer greater than zero!')
-    num_days_input = input("Enter the number of days the organisms will be left to multiply: ")
-
-num_days: int = int(num_days_input)
+num_days: int = int(days_input)
+population: float = start_num_organisms
 
 print('Day Approximate Population')
-for day_num in range(num_days):
-    print(day_num+1, (day_num *avg_daily_increase))
+for day_num in range(1, num_days + 1):
+    print(day_num, population)
+    population *= daily_increase
+
+print('Christian Ramirez-Flores')
