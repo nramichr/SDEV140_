@@ -8,6 +8,7 @@ Experiment with two runs with no seed number, two runs with the same seed number
 
 import random
 
+
     #Simulates rolling a pair of dice for a given number of times.
 def roll_dice(num_rolls):
     for i in range(1, num_rolls +1):
