@@ -30,6 +30,7 @@ def get_input() -> int:
         except ValueError:
             print("Invalid input. Please enter a valid integer.") 
 
+#Writes set of numbers to a file.
 def write_random_numbers_to_file(filename: str, count: int) -> None:
     """Write a specified number of random numbers to a file."""
     with open(filename, 'w') as file:
