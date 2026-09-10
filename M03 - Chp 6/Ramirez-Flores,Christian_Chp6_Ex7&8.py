@@ -7,7 +7,8 @@ The application should let the user specify how many random numbers the file wil
 8. Random Number File Reader                            
 This exercise assumes you have completed Programming Exercise 7, Random Number File Writer. 
 Write another program that reads the random numbers from the file, displays the numbers, then displays the following data:    
-The total of the numbers  The number of random numbers read from the file
+The total of the numbers 
+The number of random numbers read from the file
 
 """
 
@@ -56,13 +57,17 @@ def display_numbers_stats(numbers: list) -> None:
 
     total: int = sum(numbers)
     count: int = len(numbers)
+    #I've added average calculation here to display the average of the numbers read from the file. 
+    #Original excircise didn't include average. Day 6 exercise included average calculation.
+    average: float = total / count
 
     print("Random Numbers:")
     for number in numbers:
         print(number)
 
-    print(f"\nTotal of the Numbers: {total}")
-    print(f"Number of random numbers read from the file: {count}")
+    print(f"\nTotal of the Numbers: {total:,}")  # Display total with comma as thousand separator
+    print(f"Number of random numbers read from the file: {count:,}")  # Display count with comma as thousand separator
+    print(f"Average of the Numbers: {average:,.2f}")  # Display average with two decimal places and comma as thousand separator
 
 def main() -> None:
     """Main function to execute the random number file writer and reader."""
@@ -74,3 +79,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+print("Christian Ramirez-Flores")
