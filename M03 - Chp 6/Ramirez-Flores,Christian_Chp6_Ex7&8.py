@@ -12,7 +12,7 @@ The number of random numbers read from the file
 
 """
 
-
+#introducing the random library to generate random numbers.
 import random
 
 MIN_NUMBER: int = 1
