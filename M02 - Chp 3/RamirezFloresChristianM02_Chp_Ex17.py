@@ -8,6 +8,7 @@ Corner Café–Vegetarian: Yes, Vegan: Yes, Gluten-Free: Yes
 Mama’s Fine Italian–Vegetarian: Yes, Vegan: No, Gluten-Free: No
 The Chef’s Kitchen–Vegetarian: Yes, Vegan: Yes, Gluten-Free: Yes
 
+
 Write a program that asks whether any members of your party are vegetarian, vegan, or gluten-free, to which then displays 
 only the restaurants to which you may take the group. 
 
