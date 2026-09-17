@@ -1,29 +1,28 @@
 """
 
 Ex. 1
-Write a program that asks the user to enter a distance in kilometers, then uses a function to convert that distance to miles.
-The conversion formula is as follows:
-
-Miles = Kilometers x 0.6214
+Design a program that asks the user to enter a store's sales for each day of the week.
+The amounts should be stored in a list. 
+Use a loop to calculate the total sales for the week and display the result
 
 """
 
-
-#Global constant
-CONVERSION = 0.6214
-
 def main():
-    try: 
-        #Calls for user input 
-        km_input: float = float (input("Enter a distance in kilometers: "))
-        convert_to_miles(km_input)
+    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
-    except ValueError:
-        print("Error: Please enter a valid numerical value.")
+    #Pre-creates a "dummy" list with 7 slots because there are 7 " " in days
+    sales = [0.0] * len(days)
 
-def convert_to_miles(kilometers):
-    miles: float = kilometers * CONVERSION
-    print(f"{kilometers:,.2f} kilometers is equal to  {miles:,.2f} miles.")
+    #User input and stores in list which now will hold actual values
+    for i in range (len(days)):
+        sales[i] = float(input(f"Enter the sale for {days[i]}: $"))
 
-if __name__ == "__main__":
-    main()
+    #Calculates total sales
+    total = 0
+    for amount in sales:
+        total += amount
+    
+    print(f"\nTotal sales for the week: ${total:,.2f}")
+main()
+
+print("Christian Ramirez-Flores")
