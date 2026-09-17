@@ -8,7 +8,7 @@ I'm just modifying my original file from Day 07
 
 """
 
-import random
+# I no longer need to import random because its within CH_10_Die_Class_Defined
 
 #Imports class from "Ch_10_Die_ClassDefined" ---- given that the file exists in the same folder as current python file. 
 from Ch_10_Die_ClassDefined import Die
