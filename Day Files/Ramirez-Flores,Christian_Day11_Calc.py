@@ -1,56 +1,64 @@
 #   aExperimentTkinter5CalcConvert.py
 #     Uses Entry widget 13.6 p651-653
+
+
 import tkinter
-import tkinter.messagebox     # use Messagebox widget to display results
+import tkinter.messagebox  # use Messagebox widget to display results
 
 def main():
-    MyWindow=MyGUI()   # create object window
+    MyGUI()   # create object window
 class MyGUI:
     def __init__(self):
-        self.top = tkinter.Tk()     # Create main window object top
-        self.top.title('Conver Kilmeters to miles')  # top title
+        self.main_window = tkinter.Tk()
+        self.main_window.title("Calculator")
 # Code to add widgets will go here...
 #  create 2 frames to hold labels
-        self.top_frame = tkinter.Frame(self.top) # top frame for label & input
-        self.bottom_frame = tkinter.Frame(self.top) # bottom frame for buttons
-        self.middle_frame = tkinter.Frame(self.top)
+        self.top_frame = tkinter.Frame(self.main_window) # top frame for label & input
+        self.bottom_frame = tkinter.Frame(self.main_window) # bottom frame for buttons
+        self.middle_frame = tkinter.Frame(self.main_window)
+        self.result_frame = tkinter.Frame(self.main_window)
 # label widgets created text & Entry Box
         self.prompt1 = tkinter.Label(self.top_frame,   #Enter prompt
-                                    text='Enter a floating number(test1)',
+                                    text='Enter a floating number(test1):',
                                              borderwidth=2,
                                              relief='raised'  )
 #                Entry box invocation
-        self.kilo_entry = tkinter.Entry(self.top_frame,width=10)
+        self.self_kilo_entry = tkinter.Entry(self.top_frame,width=10)
+
 # my newly added section
         self.prompt2 = tkinter.Label(self.bottom_frame,
-                                    text='Enter a floating number(test2)',
+                                    text='Enter a floating number(test2):',
                                              borderwidth=2,
                                              relief='raised'  )
-        self.kilo_entry2 = tkinter.Entry(self.top_frame,width=10)
+        self.self_kilo_entry2 = tkinter.Entry(self.top_frame,width=10)
 ##newly added section ^
+
 # pack the labels on the top frame in window
-        self.prompt1.pack(side='left',ipadx=20, ipady=20,  #inside padding
-                         padx=25 , pady=35)   #outside padding
-        self.prompt2.pack(side='left',ipadx=20, ipady=20,  #inside padding  #newentry
-                                 padx=25 , pady=35)   #outside padding
-        self.kilo_entry.pack(side='left',ipadx=30, ipady=30,
-                         padx=20 , pady=20 )
-        self.kilo_entry2.pack(side='left',ipadx=30, ipady=30, #newentry
-                                 padx=20 , pady=20 )
+        self.prompt1.pack(side='left', padx=20, pady=20)
+        self.self_kilo_entry.pack(side='left', padx=30, pady=30)
+
+        self.prompt2.pack(side='top', padx=20, pady=20)
+        self.self_kilo_entry2.pack(side='top', padx=30, pady=30)
+
 #   create button widgets in the bottom frame
-        self.calc_button = tkinter.Button(self.bottom_frame,text='Multiply',command=self.do_calc) 
         self.divide_button = tkinter.Button(self.bottom_frame,text='Divide',command=self.do_calc) 
         self.multiply_button = tkinter.Button(self.bottom_frame,text='Multiply',command=self.do_calc)
         self.add_button = tkinter.Button(self.bottom_frame,text='Add',command=self.do_calc)
         self.subtract_button = tkinter.Button(self.bottom_frame,text='Subtract',command=self.do_calc)                                
         self.quit_button = tkinter.Button(self.bottom_frame,text='Quit',  # destroy method
-                                            command=self.top.destroy)                                  
+                                            command=self.main_window.destroy)                                  
+
 # pack the buttons on the bottom frame
-        self.calc_button.pack(ipadx=20, ipady=20,  #inside padding
-                         padx=25 , pady=35)   #outside padding
-        
-        self.quit_button.pack(ipadx=10, ipady=10,  #inside padding
-                         padx=30 , pady=20)   #outside paddin
+        self.multiply_button.pack(side='top', padx=5, pady=5)
+        self.divide_button.pack(side='top', padx=5, pady=5)
+        self.add_button.pack(side='top', padx=5, pady=5)
+        self.subtract_button.pack(side='top', padx=5, pady=5)
+        self.quit_button.pack(side='top', padx=5, pady=5)
+
+# results
+        self.result_label = tkinter.Label (self.result_frame, text='Result: ', font=('Arial', 12))
+        self.result_label.pack(pady=15)
+
 # Now pack the frames in the window
         self.top_frame.pack()
         self.bottom_frame.pack()
@@ -58,15 +66,30 @@ class MyGUI:
 
         tkinter.mainloop()   # infinite loop to hold window on screen
 
-# Code to add widgets will go here...
+# Code to add widgets will go here.. 
+
+
 # methods below...
-    def do_calc(self): ###program name
-        # Calculate from data entered
-        kilo = float(self.kilo_entry.get())  # get from entry box
-        cm = kilo * 100000
-        miles = cm / 2.54 / 12 / 5280 
-        # Display an information dialog box
-        tkinter.messagebox.showinfo('Result',
-                                    f'Calculated result is {miles:10.2f} miles.')
+    def do_calc(self, operation):
+        try:
+            num1: float = float (self.self_kilo_entry.get())
+            num2: float = float (self.self_kilo_entry2.get())
+
+            if operation == "*":
+                result = num1 * num2
+            elif operation == '/':
+                if num2 == 0:
+                    tkinter.messagebox.showerror("Error", "Cannot divide by zero!")
+                return
+                result = num1 / num2
+            elif operation == '+':
+                result = num1 + num2
+            elif operation == '-':
+                result = num1 - num2
+
+            self.result_label.config(f"Result: {result:,.2f}")
+        except ValueError:
+            tkinter.messagebox.showerror("Invalid Input", "Please enter a valid floating-point number in both fields.")
+
 if __name__ == '__main__':
     main()   # execute main module
