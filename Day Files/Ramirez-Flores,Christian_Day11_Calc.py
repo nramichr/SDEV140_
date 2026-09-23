@@ -1,7 +1,7 @@
 #   aExperimentTkinter5CalcConvert.py
 #     Uses Entry widget 13.6 p651-653
 
-
+import tkinter
 import tkinter.messagebox  # use Messagebox widget to display results
 
 def main():
@@ -42,10 +42,10 @@ class MyGUI:
         self.self_kilo_entry2.pack(side='top', padx=30, pady=30)
 
 #   create button widgets in the bottom frame
-        self.divide_button = tkinter.Button(self.bottom_frame,text='Divide') 
-        self.multiply_button = tkinter.Button(self.bottom_frame,text='Multiply')
-        self.add_button = tkinter.Button(self.bottom_frame,text='Add')
-        self.subtract_button = tkinter.Button(self.bottom_frame,text='Subtract')                                
+        self.divide_button = tkinter.Button(self.bottom_frame,text='Divide', command=self.divide_click) 
+        self.multiply_button = tkinter.Button(self.bottom_frame,text='Multiply', command=self.multiply_click)
+        self.add_button = tkinter.Button(self.bottom_frame,text='Add', command=self.add_click)
+        self.subtract_button = tkinter.Button(self.bottom_frame,text='Subtract', command=self.subtract_click)                                
         self.quit_button = tkinter.Button(self.bottom_frame,text='Quit',  # destroy method
                                             command=self.main_window.destroy)                                  
 
@@ -64,33 +64,46 @@ class MyGUI:
         self.top_frame.pack()
         self.bottom_frame.pack()
         self.middle_frame.pack()
-
+        self.result_frame.pack()
         tkinter.mainloop()   # infinite loop to hold window on screen
 
 # Code to add widgets will go here.. 
 
 
 # methods below...
-def do_calc(operation):
+def do_calc(self,operation):
         try:
             num1: float = float (self.self_kilo_entry.get())
             num2: float = float (self.self_kilo_entry2.get())
 
-            if operation == "*":
-                result = num1 * num2
-            elif operation == '/':
-                if num2 == 0:
-                    tkinter.messagebox.showerror("Error", "Cannot divide by zero!")
-                return
-                result = num1 / num2
-            elif operation == '+':
-                result = num1 + num2
+            if operation == "+":
+                 result = num1 + num2
             elif operation == '-':
-                result = num1 - num2
+                 result = num1 - num2
+            elif operation == '*':
+                 result = num1 * num2
+            elif operation == '/':
+                 if num2 == 0:
+                    tkinter.messagebox.showerror("Error", "Cannot divide by zero")
+                    return
+                 result = num1 /  num2
 
-            self.result_label.config(f"Result: {result:,.2f}")
+            self.result_label.config(text=f"Result: {result:,.2f}")
         except ValueError:
             tkinter.messagebox.showerror("Invalid Input", "Please enter a valid floating-point number in both fields.")
+
+def add_click(self):
+     self.do_calc('+')
+
+def subtract_click(self):
+     self.do_calc('-')
+
+def multiply_click(self):
+     self.do_calc('*')
+
+def divide_click(self):
+     self.do_calc('/')
+
 
 if __name__ == '__main__':
     main()   # execute main module
