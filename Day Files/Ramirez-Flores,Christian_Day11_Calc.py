@@ -2,11 +2,12 @@
 #     Uses Entry widget 13.6 p651-653
 
 
-import tkinter
 import tkinter.messagebox  # use Messagebox widget to display results
 
 def main():
     MyGUI()   # create object window
+
+
 class MyGUI:
     def __init__(self):
         self.main_window = tkinter.Tk()
@@ -21,30 +22,30 @@ class MyGUI:
         self.prompt1 = tkinter.Label(self.top_frame,   #Enter prompt
                                     text='Enter a floating number(test1):',
                                              borderwidth=2,
-                                             relief='raised'  )
+                                             relief='raised', width=15)
 #                Entry box invocation
         self.self_kilo_entry = tkinter.Entry(self.top_frame,width=10)
 
-# my newly added section
+# my newly added section for second variable
         self.prompt2 = tkinter.Label(self.bottom_frame,
                                     text='Enter a floating number(test2):',
                                              borderwidth=2,
-                                             relief='raised'  )
-        self.self_kilo_entry2 = tkinter.Entry(self.top_frame,width=10)
+                                             relief='raised', width=15)
+        self.self_kilo_entry2 = tkinter.Entry(self.bottom_frame,width=10)
 ##newly added section ^
 
 # pack the labels on the top frame in window
         self.prompt1.pack(side='left', padx=20, pady=20)
-        self.self_kilo_entry.pack(side='left', padx=30, pady=30)
+        self.self_kilo_entry.pack(side='left', padx=20, pady=20)
 
         self.prompt2.pack(side='top', padx=20, pady=20)
         self.self_kilo_entry2.pack(side='top', padx=30, pady=30)
 
 #   create button widgets in the bottom frame
-        self.divide_button = tkinter.Button(self.bottom_frame,text='Divide',command=self.do_calc) 
-        self.multiply_button = tkinter.Button(self.bottom_frame,text='Multiply',command=self.do_calc)
-        self.add_button = tkinter.Button(self.bottom_frame,text='Add',command=self.do_calc)
-        self.subtract_button = tkinter.Button(self.bottom_frame,text='Subtract',command=self.do_calc)                                
+        self.divide_button = tkinter.Button(self.bottom_frame,text='Divide') 
+        self.multiply_button = tkinter.Button(self.bottom_frame,text='Multiply')
+        self.add_button = tkinter.Button(self.bottom_frame,text='Add')
+        self.subtract_button = tkinter.Button(self.bottom_frame,text='Subtract')                                
         self.quit_button = tkinter.Button(self.bottom_frame,text='Quit',  # destroy method
                                             command=self.main_window.destroy)                                  
 
@@ -70,7 +71,7 @@ class MyGUI:
 
 
 # methods below...
-    def do_calc(self, operation):
+def do_calc(operation):
         try:
             num1: float = float (self.self_kilo_entry.get())
             num2: float = float (self.self_kilo_entry2.get())
