@@ -2,7 +2,9 @@
 aExperimentTkinter5CalcConvert.py
 Uses Entry widget 13.6 p651-653
 
-This calculator is fully functional. Outputting in 
+This calculator is fully functional, BUT doesn't look too pretty. 
+I've already spent nearly 6+ hrs solving issues after issues and just wanted it to be functional.
+I wouldn't wish using tkinter on my worse enemy. 
 
 """
 
