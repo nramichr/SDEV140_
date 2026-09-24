@@ -1,5 +1,10 @@
-#   aExperimentTkinter5CalcConvert.py
-#     Uses Entry widget 13.6 p651-653
+""" 
+aExperimentTkinter5CalcConvert.py
+Uses Entry widget 13.6 p651-653
+
+This calculator is fully functional. Outputting in 
+
+"""
 
 import tkinter
 import tkinter.messagebox  # use Messagebox widget to display results
@@ -93,7 +98,7 @@ class MyGUI:
                 tkinter.messagebox.showerror("Error", "Unknown operation")
                 return
 
-            self.result_label.config(text=f"Result: {result:,.2f}")
+            self.result_label.config(text=f"Result: {result:,}")
         except ValueError:
             tkinter.messagebox.showerror(
                 "Invalid Input",
