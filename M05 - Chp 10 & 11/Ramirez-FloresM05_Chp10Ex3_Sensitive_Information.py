@@ -37,13 +37,13 @@ def main():
 
     people = [client1,client2,client3]
 
-    for i, client in enumerate(people, 1):
+    for i, client in enumerate(people, 0): #Originally I'd placed a '1' for the starting list which caused an error but reviesd to '0'. 
         print()
         print("Client Data")
         print(f"Name: {client.get_name()}")
         print(f"Address: {client.get_address()}")
         print(f"Age: {client.get_age()}")
-        print(f"Phone Number: {client._phone_number}") #if i place "get_phone_number" I get a "<bound method PersonalInformation.get_phone_number of <__main__.PersonalInformation object at 0x000002B0841D8690>>"
+        print(f"Phone Number: {client.get_phone_number()}") #***FIXED*** if i place "get_phone_number" I get a "<bound method PersonalInformation.get_phone_number of <__main__.PersonalInformation object at 0x000002B0841D8690>>"
         print()
 
 if __name__ == "__main__":
